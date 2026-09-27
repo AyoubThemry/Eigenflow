@@ -1,0 +1,43 @@
+@startuml
+
+abstract class Vektor {
+  + Coordinates : double[] {get, set}
+  + Dimensions : int {get}
+  + add(x : Vektor) : Vektor
+  + subtract(x : Vektor) : Vektor
+  + scalarProduct(x : Vektor) : double
+  + crossProduct(x : Vektor) : Vektor
+}
+
+abstract class Matrix {
+  + Coordinates : double[][] {get, set}
+  + Rows : int {get}
+  + Columns : int {get}
+  + scalarProduct(y : double) : Matrix
+  + transpose() : Matrix
+  + inverse() : Matrix
+  + determinant() : double
+  + trace() : double
+  + eigenValues() : double[]
+  + eigenVectors() : Vektor[]
+}
+
+abstract class Transformation {
+  # TransformationMatrix : Matrix {get, set}
+  + apply(v : Vektor) : Vektor
+}
+
+interface Renderer {
+  + render(v : Vektor) : void
+  + render(m : Matrix) : void
+}
+
+Transformation *-- Matrix : uses
+Transformation ..> Vektor : transforms
+Renderer ..> Vektor : renders
+Renderer ..> Matrix : renders
+
+@enduml
+Renderer ..> Matrix : renders
+
+@enduml
