@@ -1,12 +1,12 @@
 @startuml
 
-abstract class Vektor {
+abstract class Vector {
   + Coordinates : double[] {get, set}
   + Dimensions : int {get}
-  + add(x : Vektor) : Vektor
-  + subtract(x : Vektor) : Vektor
-  + scalarProduct(x : Vektor) : double
-  + crossProduct(x : Vektor) : Vektor
+  + add(x : Vector) : Vector
+  + subtract(x : Vector) : Vector
+  + scalarProduct(x : Vector) : double
+  + crossProduct(x : Vector) : Vector
 }
 
 abstract class Matrix {
@@ -19,25 +19,22 @@ abstract class Matrix {
   + determinant() : double
   + trace() : double
   + eigenValues() : double[]
-  + eigenVectors() : Vektor[]
+  + eigenVectors() : Vector[]
 }
 
 abstract class Transformation {
   # TransformationMatrix : Matrix {get, set}
-  + apply(v : Vektor) : Vektor
+  + apply(v : Vector) : Vector
 }
 
 interface Renderer {
-  + render(v : Vektor) : void
+  + render(v : Vector) : void
   + render(m : Matrix) : void
 }
 
 Transformation *-- Matrix : uses
-Transformation ..> Vektor : transforms
-Renderer ..> Vektor : renders
-Renderer ..> Matrix : renders
-
-@enduml
+Transformation ..> Vector : transforms
+Renderer ..> Vector : renders
 Renderer ..> Matrix : renders
 
 @enduml
