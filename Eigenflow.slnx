@@ -2,5 +2,5 @@
   <Folder Name="/src/">
     <Project Path="src/Eigenflow/Eigenflow.csproj" />
   </Folder>
-  <Project Path="tests/tests.csproj" />
+  <Project Path="tests/tests.csproj" /> 
 </Solution>

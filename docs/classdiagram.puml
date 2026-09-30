@@ -1,15 +1,25 @@
 @startuml
 
-abstract class Vector {
+class Vector {
+  + Coordinates : double[] {get, set}
+  + Dimensions : int {get}
+  + add(x : Vector) : Vector
+  + subtract(x : Vector) : Vector
+  + scalarProduct(x : Vector) : double
+  
+  
+}
+class 3DVector extends Vector  {
   + Coordinates : double[] {get, set}
   + Dimensions : int {get}
   + add(x : Vector) : Vector
   + subtract(x : Vector) : Vector
   + scalarProduct(x : Vector) : double
   + crossProduct(x : Vector) : Vector
+  
 }
 
-abstract class Matrix {
+class Matrix {
   + Coordinates : double[][] {get, set}
   + Rows : int {get}
   + Columns : int {get}
