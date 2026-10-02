@@ -18,4 +18,9 @@
     <Using Include="Xunit" />
   </ItemGroup>
 
+  <!-- Add this new ItemGroup to link to your source code -->
+  <ItemGroup>
+    <ProjectReference Include="..\src\Eigenflow\Eigenflow.csproj" />
+  </ItemGroup>
+
 </Project>

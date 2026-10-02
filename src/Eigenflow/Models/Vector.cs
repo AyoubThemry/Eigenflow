@@ -3,7 +3,7 @@ using System.Runtime.CompilerServices;
 
 namespace Eigenflow.Models;
 
-internal class Vector
+public class Vector
 {
     public double[] Coordinates { get; set; } = Array.Empty<double>();   
     

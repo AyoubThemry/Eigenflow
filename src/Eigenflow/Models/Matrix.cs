@@ -1,8 +1,6 @@
 namespace Eigenflow.Models;
 
-internal class Matrix
+internal class Matrix 
 {
-
-  
 
 }
