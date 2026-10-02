@@ -1,85 +1,86 @@
 using System;
-using System.Runtime.CompilerServices; // Required for Array.Empty
+using System.Runtime.CompilerServices;
+
 namespace Eigenflow.Models;
+
 internal class Vector
 {
-    public double[] Coordinates { get; set;} = Array.Empty<double>();   
+    public double[] Coordinates { get; set; } = Array.Empty<double>();   
     
     public int Dimensions => Coordinates.Length;
     
-    public Vector(double[] orderedCordinates,int length)
+    public Vector(double[] orderedCordinates, int length)
     {
         if (orderedCordinates.Length != length)
         {
-           throw new ArgumentException("Length does not match the provided coordinates.", nameof(length));
-       
+            throw new ArgumentException("Length does not match the provided coordinates.", nameof(length));
         }
         Coordinates = new double[length];
-        for (int i = 0;i < length;i++)
+        for (int i = 0; i < length; i++)
         {
-            Coordinates[i]=orderedCordinates[i]; 
+            Coordinates[i] = orderedCordinates[i]; 
         }
     }
  
     public Vector Add(Vector toBeAdded)
     {
-        // bouncer pattern 
-        // check code under this ?
-     /*    if(this.Dimensions is null || toBeAdded.Dimensions is null)
+
+        if (toBeAdded == null)
         {
-            throw new InvalidOperationException("Cannot add Vectors because Dimensions is null one of both Vectors is Null.");
-        }  */
+            throw new ArgumentNullException(nameof(toBeAdded));
+        }
         if (toBeAdded.Dimensions != this.Dimensions)
         {
-            throw new ArgumentException("Dimensions Do not match", nameof(Dimensions));
+            throw new ArgumentException("Dimensions do not match.", nameof(toBeAdded));
         }
         
-        for(int i = 0; i < Dimensions; i++)
+        double[] newCoordinates = new double[this.Dimensions];
+        for(int i = 0; i < this.Dimensions; i++)
         {
-            this.Coordinates[i]=this.Coordinates[i]+toBeAdded.Coordinates[i];
+            newCoordinates[i] = this.Coordinates[i] + toBeAdded.Coordinates[i];
         }
-        return this;
+        
+
+        return new Vector(newCoordinates, this.Dimensions);
     }
+
     public Vector Subtract(Vector toBeSubtracted)
     {
-        // bouncer pattern 
-        // check code under this 
-      /*  if(this.Dimensions is null || toBeSubtracted.Dimensions is null)
+        if (toBeSubtracted == null)
         {
-            throw new InvalidOperationException("Cannot add Vectors because Dimensions is null one of both Vectors is Null.");
-        }  */
+            throw new ArgumentNullException(nameof(toBeSubtracted));
+        }
         if (toBeSubtracted.Dimensions != this.Dimensions)
         {
-            throw new ArgumentException("Dimensions Do not match", nameof(Dimensions));
+            throw new ArgumentException("Dimensions do not match.", nameof(toBeSubtracted));
         }
-        for(int i = 0; i < Dimensions; i++)
+
+        double[] newCoordinates = new double[this.Dimensions];
+        for(int i = 0; i < this.Dimensions; i++)
         {
-            this.Coordinates[i]=this.Coordinates[i]-toBeSubtracted.Coordinates[i];
+            newCoordinates[i] = this.Coordinates[i] - toBeSubtracted.Coordinates[i];
         }
-        return this;
+        
+    
+        return new Vector(newCoordinates, this.Dimensions);
     }
+
     public double ScalarProduct(Vector tobeScalarProducted)
     {
-        // bouncer pattern 
-        // check code under this 
-      /*   if(this.Dimensions is null || tobeScalarProducted.Dimensions is null)
+        if (tobeScalarProducted == null)
         {
-            throw new InvalidOperationException("Cannot add Vectors because Dimensions is null one of both Vectors is Null.");
-        }  */
+            throw new ArgumentNullException(nameof(tobeScalarProducted));
+        }
         if (tobeScalarProducted.Dimensions != this.Dimensions)
         {
-            throw new ArgumentException("Dimensions Do not match", nameof(Dimensions));
+            throw new ArgumentException("Dimensions do not match.", nameof(tobeScalarProducted));
         }
+
         double sum = 0;
-        for(int i = 0; i < Dimensions; i++)
+        for(int i = 0; i < this.Dimensions; i++)
         {
-            sum+=this.Coordinates[i]*tobeScalarProducted.Coordinates[i];
+            sum += this.Coordinates[i] * tobeScalarProducted.Coordinates[i];
         }
-        return sum;
+        return sum; 
     }
-
-        
-    }
-
-
-   
+}
