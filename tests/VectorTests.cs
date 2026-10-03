@@ -36,4 +36,13 @@ public class VectorTests
 
     }
     /* adding two vectors with one of them being null*/
+    [Fact]
+    public void Add_TwoVectorsWithOneOfThemNulled()
+    {
+        // Given
+    
+        // When
+    
+        // Then
+    }
 }
