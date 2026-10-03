@@ -1,0 +1,23 @@
+# Build folders (Binärdateien)
+[Bb]in/
+[Oo]bj/
+
+# Test results and Code Coverage (Codeabdeckung)
+TestResults/
+*.cobertura.xml
+*.coverage
+
+# IDE specific folders (Visual Studio / VS Code / Rider)
+.vs/
+.vscode/
+.idea/
+*.user
+*.suo
+
+# NuGet Packages (Abhängigkeiten)
+packages/
+*.nupkg
+
+# OS generated files
+.DS_Store
+Thumbs.db

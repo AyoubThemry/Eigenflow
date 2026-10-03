@@ -1,6 +1,6 @@
 namespace Eigenflow.Models;
  
-internal class Vector3D : Vector
+public class Vector3D : Vector
 {
  public Vector3D(double[] orderedCordinates) : base(orderedCordinates, 3)
     {
