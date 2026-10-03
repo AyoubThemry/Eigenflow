@@ -6,7 +6,7 @@ public class Vector3D : Vector
     {
         // no additional steps i can think of 
     }
- public Vector3D crossProduct(Vector3D tobeCrossProducted)
+ public Vector3D CrossProduct(Vector3D tobeCrossProducted)
     {
         if (tobeCrossProducted.Dimensions != this.Dimensions)
         {

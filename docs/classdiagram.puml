@@ -10,12 +10,7 @@ class Vector {
   
 }
 class 3DVector extends Vector  {
-  + Coordinates : double[] {get, set}
-  + Dimensions : int {get}
-  + add(x : Vector) : Vector
-  + subtract(x : Vector) : Vector
-  + scalarProduct(x : Vector) : double
-  + crossProduct(x : Vector) : Vector
+  + CrossProduct(x : Vector) : Vector
   
 }
 
@@ -23,23 +18,23 @@ class Matrix {
   + Coordinates : double[][] {get, set}
   + Rows : int {get}
   + Columns : int {get}
-  + scalarProduct(y : double) : Matrix
-  + transpose() : Matrix
-  + inverse() : Matrix
-  + determinant() : double
-  + trace() : double
-  + eigenValues() : double[]
-  + eigenVectors() : Vector[]
+  + ScalarProduct(y : double) : Matrix
+  + Transpose() : Matrix
+  + Inverse() : Matrix
+  + Determinant() : double
+  + Trace() : double
+  + EigenValues() : double[]
+  + EigenVectors() : Vector[]
 }
 
-abstract class Transformation {
+class Transformation {
   # TransformationMatrix : Matrix {get, set}
-  + apply(v : Vector) : Vector
+  + Transform(v : Vector) : Vector
 }
 
-interface Renderer {
-  + render(v : Vector) : void
-  + render(m : Matrix) : void
+interface IRenderer {
+  + Render(v : Vector) : void
+  + Render(m : Matrix) : void
 }
 
 Transformation *-- Matrix : uses

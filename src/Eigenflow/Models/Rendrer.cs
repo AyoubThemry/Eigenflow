@@ -2,8 +2,8 @@ using System.Security.Cryptography.X509Certificates;
 
 namespace Eigenflow.Models;
 
-public interface Rendrer
+public interface IRendrer
 {
-    public void render(Matrix toBeRendererd);
-    public void render(Vector toBeRendererd);
+    public void Render(Matrix toBeRendererd);
+    public void Render(Vector toBeRendererd);
 }
