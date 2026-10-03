@@ -39,7 +39,7 @@ interface IRenderer {
 
 Transformation *-- Matrix : uses
 Transformation ..> Vector : transforms
-Renderer ..> Vector : renders
-Renderer ..> Matrix : renders
+IRenderer ..> Vector : renders
+IRenderer ..> Matrix : renders
 
 @enduml
