@@ -10,8 +10,8 @@ public class Transformation
     }
     public Vector Transform(Vector toBeTransformed)
     {
-        // This return is just boilerplate to be removed when writing logic
-        return toBeTransformed;
+      // instead of a return not Implemented Exception
+      throw new NotImplementedException();
     }
 
 }

@@ -11,7 +11,6 @@ class Vector {
 }
 class 3DVector extends Vector  {
   + CrossProduct(x : Vector) : Vector
-  
 }
 
 class Matrix {
