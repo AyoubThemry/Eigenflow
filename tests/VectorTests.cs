@@ -90,6 +90,39 @@ public class VectorTests
             Vector v1 = new Vector([5, 4, 3], 3);
           
         // When + Then ( Assert + Addition  )
-          Assert.Throws<ArgumentNullException>(()=>v1.Subtract(null!));
+           Assert.Throws<ArgumentNullException>(()=>v1.Subtract(null!));
     }
+    [Fact]
+    public void Scalar__TwoVectorsWithDifferentDimensions_ThrowsException()
+    {
+        // Given 
+            Vector v1 = new Vector([1, 2, 3], 3);
+            Vector v2 = new Vector([1, 2], 2);
+
+        // When + Then
+            Assert.Throws<ArgumentException>(()=> v1.ScalarProduct(v2));
+    }
+    [Fact]   
+    public void Scalar_TwoVectorsWithOneOfThemNulled()
+    {
+        // Given
+            Vector v1 = new Vector([5, 4, 3], 3);
+          
+        // When + Then ( Assert + Addition  )
+           Assert.Throws<ArgumentNullException>(()=>v1.ScalarProduct(null!));
+    }
+    [Fact]
+    public void Scalar_TwoValidVectors_ReturnsCorrectDouble()
+    {
+        // Given
+            Vector v1 = new Vector([5, 4, 3], 3);
+            Vector v2 = new Vector([3, 0, 1.3], 3);
+          
+        // When 
+            double result =v1.ScalarProduct(v2);
+
+        // Then
+        Assert.Equal(18.9,result);
+    }
+
 }
