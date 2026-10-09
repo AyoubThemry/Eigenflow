@@ -39,5 +39,4 @@ public Vector[] EigenVectors()
 {
     throw new NotImplementedException();
 }
-
 }

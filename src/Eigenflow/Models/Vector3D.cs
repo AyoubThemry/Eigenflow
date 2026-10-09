@@ -1,10 +1,10 @@
 namespace Eigenflow.Models;
- 
+  
 public class Vector3D : Vector
 {
  public Vector3D(double[] orderedCordinates) : base(orderedCordinates, 3)
     {
-        // no additional steps i can think of 
+        // no additional steps 
     }
  public Vector3D CrossProduct(Vector3D tobeCrossProducted)
     {
@@ -14,10 +14,10 @@ public class Vector3D : Vector
         }
         
        double x = (this.Coordinates[1]*tobeCrossProducted.Coordinates[2] - this.Coordinates[2]*tobeCrossProducted.Coordinates[1]);
-       double y  = (this.Coordinates[2]*tobeCrossProducted.Coordinates[0] - this.Coordinates[0]*tobeCrossProducted.Coordinates[2]);
+       double y = (this.Coordinates[2]*tobeCrossProducted.Coordinates[0] - this.Coordinates[0]*tobeCrossProducted.Coordinates[2]);
        double z = (this.Coordinates[0]*tobeCrossProducted.Coordinates[1] - this.Coordinates[1]*tobeCrossProducted.Coordinates[0]);
 
-       
+//       
         return new Vector3D(new double[] { x, y, z });
     }
 

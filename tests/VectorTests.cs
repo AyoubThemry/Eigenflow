@@ -4,6 +4,13 @@ namespace tests;
 public class VectorTests
 {
     [Fact]
+    public void constructor_WhenDimensionLessThanCoordinatesLength_ThrowsIllegalArgumentException()
+    {
+     
+         Assert.Throws<ArgumentException>(()=> new Vector([5, 4, 3], 2));
+        
+    }
+    [Fact]
     public void Add_TwoValidVectors_ReturnsCorrectVector()
     {
        
@@ -93,7 +100,7 @@ public class VectorTests
            Assert.Throws<ArgumentNullException>(()=>v1.Subtract(null!));
     }
     [Fact]
-    public void Scalar__TwoVectorsWithDifferentDimensions_ThrowsException()
+    public void Scalar_TwoVectorsWithDifferentDimensions_ThrowsException()
     {
         // Given 
             Vector v1 = new Vector([1, 2, 3], 3);
@@ -103,7 +110,7 @@ public class VectorTests
             Assert.Throws<ArgumentException>(()=> v1.ScalarProduct(v2));
     }
     [Fact]   
-    public void Scalar_TwoVectorsWithOneOfThemNulled()
+    public void Scalar_TwoVectorsWithOneOfThemNulled_ThrowsException()
     {
         // Given
             Vector v1 = new Vector([5, 4, 3], 3);
