@@ -22,9 +22,6 @@ public class Vector3DTests
         Assert.Equal((4-20),v3.Coordinates[0]);
         Assert.Equal((3+5),v3.Coordinates[1]);
         Assert.Equal((20-4),v3.Coordinates[2]);
-
-
-        
     }
 
 }

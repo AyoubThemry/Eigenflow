@@ -7,9 +7,9 @@ public int Rows {get;}
 public int Columns {get;}
 public Matrix ScalarProduct(double y)
 {
+       
     throw new NotImplementedException();
 }
-
 public Matrix Transpose()
 {
     throw new NotImplementedException();
