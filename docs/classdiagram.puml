@@ -3,14 +3,12 @@
 class Vector {
   + Coordinates : double[] {get, set}
   + Dimensions : int {get}
-  + add(x : Vector) : Vector
-  + subtract(x : Vector) : Vector
-  + scalarProduct(x : Vector) : double
-  
-  
+  + Add(x : Vector) : Vector
+  + Subtract(x : Vector) : Vector
+  + ScalarProduct(x : Vector) : double
 }
-class 3DVector extends Vector  {
-  + CrossProduct(x : Vector) : Vector
+class Vector3D extends Vector  {
+  + CrossProduct(x : Vector3D) : Vector3D
 }
 
 class Matrix {
@@ -19,13 +17,16 @@ class Matrix {
   + Columns : int {get}
   + ScalarProduct(y : double) : Matrix
   + Transpose() : Matrix
-  + Inverse() : Matrix
+
+}
+class SquaredMatrix extends Matrix{
+  + Inverse() : SquaredMatrix
   + Determinant() : double
   + Trace() : double
   + EigenValues() : double[]
   + EigenVectors() : Vector[]
-}
 
+}
 class Transformation {
   # TransformationMatrix : Matrix {get, set}
   + Transform(v : Vector) : Vector

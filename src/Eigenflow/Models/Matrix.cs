@@ -33,28 +33,4 @@ public Matrix Transpose()
     throw new NotImplementedException();
 }
 
-public Matrix Inverse()
-{
-    throw new NotImplementedException();
-}
-
-public double Determinant()
-{
-    throw new NotImplementedException();
-}
-
-public double Trace()
-{
-    throw new NotImplementedException();
-}
-
-public double[] EigenValues()
-{
-    throw new NotImplementedException();
-}
-
-public Vector[] EigenVectors()
-{
-    throw new NotImplementedException();
-}
 }
