@@ -8,6 +8,7 @@ public class Vector3D : Vector
     }
  public Vector3D CrossProduct(Vector3D tobeCrossProducted)
     {
+        ArgumentNullException.ThrowIfNull(tobeCrossProducted);
         if (tobeCrossProducted.Dimensions != this.Dimensions)
         {
             throw new ArgumentException("Dimensions Do not match", nameof(Dimensions));
